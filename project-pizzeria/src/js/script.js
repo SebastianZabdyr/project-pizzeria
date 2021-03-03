@@ -155,7 +155,6 @@
       });
     }
 
-
     processOrder() {
       const thisProduct = this;
 
@@ -217,6 +216,7 @@
       thisProduct.priceElem.innerHTML = price;
     }
   }
+
 
   const app = {
     initData: function(){
