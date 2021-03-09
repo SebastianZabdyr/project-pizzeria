@@ -281,7 +281,7 @@
     constructor(element){
       const thisWidget = this;
 
-  //    console.log('amount widget',thisWidget,'cons arg',element);
+      //    console.log('amount widget',thisWidget,'cons arg',element);
       thisWidget.getElements(element);
       thisWidget.setValue(settings.amountWidget.defaultValue);
       thisWidget.initActions();
@@ -327,7 +327,7 @@
 
         thisWidget.setValue(thisWidget.input.value);
       });
-    //  console.log(thisWidget.input);
+      //  console.log(thisWidget.input);
 
       thisWidget.linkDecrease.addEventListener('click', function(event){
         event.preventDefault();
