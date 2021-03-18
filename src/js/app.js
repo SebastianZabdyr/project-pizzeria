@@ -3,6 +3,36 @@ import Product from './components/Product.js';
 import Cart from './components/Cart.js';
 
 const app = {
+
+  initPages: function(){
+    const thisApp = this;
+
+    thisApp.pages = document.querySelector(select.containerOf.pages).children;
+    thisApp.navLinks = document.querySelectorAll(select.nav.links);
+    thisApp.activatePage(thisApp.pages[0].id);
+
+  },
+
+  activatePage: function(pageId){
+    const thisApp = this;
+
+    /////// add class active to matchng pages , remove trom non matchng
+    for(let page of thisApp.pages){
+      page.classList.toggle(classNames.pages.active, page.id == pageId);
+    }
+
+    /////// add class active to matchng links , remove trom non matchng
+    for(let link of thisApp.navLinks){
+      link.classList.toggle(
+        classNames.nav.active,
+        link.getAttribute('href') == '#' + pageId
+      );
+    }
+
+
+
+  },
+
   initData: function(){
     const thisApp = this;
 
@@ -57,9 +87,11 @@ const app = {
     console.log('settings:', settings);
     console.log('templates:', templates);
 
+    thisApp.initPages();
     thisApp.initData();
     thisApp.initCart();
   },
+
 };
 
 app.init();
