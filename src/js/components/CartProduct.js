@@ -12,7 +12,7 @@ class CartProduct{
     thisCartProduct.id = menuProduct.id;
     thisCartProduct.name = menuProduct.name;
     thisCartProduct.params = menuProduct.params;
-    thisCartProduct.price = menuProduct.price;
+    thisCartProduct.price = menuProduct.priceSingle * menuProduct.amount;
     thisCartProduct.priceSingle = menuProduct.priceSingle;
 
     thisCartProduct.getElements(element);
