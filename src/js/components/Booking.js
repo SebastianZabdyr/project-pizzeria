@@ -1,7 +1,7 @@
 import {templates, select} from '../settings.js';
 import AmountWidget from '../components/AmountWidget.js';
 import DatePicker from '../components/DatePicker.js';
-//import HourPicker from '../components/HourPicker.js';
+import HourPicker from '../components/HourPicker.js';
 
 class Booking {
 
@@ -41,7 +41,7 @@ class Booking {
 
     thisBooking.datePicker = new DatePicker(thisBooking.dom.datePicker);
 
-    //thisBooking.hourPicker = new HourPicker (thisBooking.dom.hourPicker);
+    thisBooking.hourPicker = new HourPicker (thisBooking.dom.hourPicker);
   }
 }
 
