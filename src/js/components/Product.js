@@ -81,7 +81,7 @@ class Product{
 
       for(let product of activeProduct){
         /////////if VER 1 ///////
-        if(activeProduct != null && activeProduct != thisProduct.element){
+        if (activeProduct != null && activeProduct != thisProduct.element){
           product.classList.remove('active');
         }
         ////////if VER 2 ///////////
@@ -155,7 +155,7 @@ class Product{
 
         // check if the option is not default
 
-        if(activeOption && !option.default){
+        if (activeOption && !option.default){
 
           // add option price to price variable
 
@@ -164,7 +164,7 @@ class Product{
 
         // check if the option is default
 
-        else if(!activeOption && option.default){
+        else if (!activeOption && option.default){
 
           // reduce price variable
 
@@ -173,13 +173,13 @@ class Product{
 
         const optionImage = thisProduct.imageWrapper.querySelector('.' + paramId + '-' + optionId);
 
-        if(optionImage){
+        if (optionImage){
 
-          if(activeOption){
+          if (activeOption){
 
             optionImage.classList.add(classNames.menuProduct.imageVisible);
 
-          }else if(!activeOption){
+          } else if (!activeOption){
 
             optionImage.classList.remove(classNames.menuProduct.imageVisible);
           }
@@ -259,7 +259,7 @@ class Product{
 
         const optionActive = formData[paramId] && formData[paramId].includes(optionId);
 
-        if(optionActive){
+        if (optionActive){
 
           params[paramId].options[optionId] = option.label;
 

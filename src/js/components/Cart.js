@@ -122,7 +122,7 @@ class Cart{
       thisCart.subtotalPrice += product.price;
     }
 
-    if(thisCart.totalnumber !== 0){
+    if (thisCart.totalnumber !== 0){
       thisCart.totalPrice = thisCart.subtotalPrice + thisCart.deliveryFee;
 
       console.log('total', thisCart.totalPrice, 'subtotal', thisCart.subtotalPrice, 'number', thisCart.totalNumber, 'delivery', thisCart.deliveryFee );
