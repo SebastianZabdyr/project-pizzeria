@@ -157,6 +157,30 @@
 
     }
 
+    &.selected {
+      color: lighten($color-dark, 40%);
+      cursor: cell;
+
+      &::after{
+        position: absolute;
+        content: '';
+        width: 102%;
+        height: 102%;
+        left: 0;
+        top: 0;
+        background: green;
+        opacity: 0.6;
+      }
+
+    }
+
+    &.click-booked {
+      color: red;
+      position: absolute;
+      background: red;
+      opacity: 0.8;
+    }
+
     &.booked {
       cursor: not-allowed;
       color: lighten($color-dark, 40%);
