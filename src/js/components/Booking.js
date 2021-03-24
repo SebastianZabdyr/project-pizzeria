@@ -12,6 +12,8 @@ class Booking {
     thisBooking.render(element);
     thisBooking.initWidgets();
     thisBooking.getData();
+
+    thisBooking.tablesInfo = '';
   }
 
   getData(){
@@ -171,7 +173,7 @@ class Booking {
     thisBooking.dom.hourPicker = thisBooking.dom.wrapper.querySelector(select.widgets.hourPicker.wrapper);
 
     thisBooking.dom.tables = thisBooking.dom.wrapper.querySelectorAll(select.booking.tables);
-
+    thisBooking.dom.containerOfTables = thisBooking.dom.wrapper.querySelector(select.containerOf.tables);
     //console.log(thisBooking.dom.peopleAmount , thisBooking.dom.hoursAmount ,thisBooking.dom.datePicker, thisBooking.dom.hourPicker);
   }
 
@@ -191,6 +193,45 @@ class Booking {
     thisBooking.dom.wrapper.addEventListener('updated', function(){
       thisBooking.updateDOM();
     });
+
+    thisBooking.dom.containerOfTables.addEventListener('click', function(event){
+      event.preventDefault();
+      thisBooking.initTables(event);
+    });
+  }
+
+  initTables(event){
+    const thisBooking = this;
+
+    let clickedElem = event.target;
+
+    if (clickedElem.classList.contains(classNames.booking.table)){
+
+      if (clickedElem.classList.contains(classNames.booking.tableBooked)){
+
+        clickedElem.classList.add('click-booked');
+
+      } else if (!clickedElem.classList.contains(classNames.booking.tableBooked) && !clickedElem.classList.contains(classNames.booking.tableSelected) ) {
+
+        let tableId = clickedElem.getAttribute('data-table');
+        // let dataTable = clickedElement.getAttribute(settings.booking.tableIdAttribute);
+        thisBooking.tablesInfo = tableId;
+        clickedElem.classList.add(classNames.booking.tableSelected);
+
+        for(let table of thisBooking.dom.tables){
+
+          let floorTableId = table.getAttribute('data-table');
+
+          if (floorTableId !== thisBooking.tablesInfo && table.classList.contains(classNames.booking.tableSelected)){
+
+            table.classList.remove(classNames.booking.tableSelected);
+            clickedElem.classList.add(classNames.booking.tableSelected);
+          }
+        }
+      } else if (clickedElem.classList.contains(classNames.booking.tableSelected)){
+        clickedElem.classList.remove(classNames.booking.tableSelected);
+      }
+    }
   }
 }
 
