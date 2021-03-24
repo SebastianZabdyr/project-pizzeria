@@ -66,9 +66,9 @@ class Booking {
         ]);
       })
       .then(function([bookings, eventsCurrent, eventsRepeat]){
-        console.log('bookings', bookings);
-        console.log('eventsCurrent', eventsCurrent);
-        console.log('eventsRepeat', eventsRepeat);
+        //console.log('bookings', bookings);
+        //console.log('eventsCurrent', eventsCurrent);
+        //console.log('eventsRepeat', eventsRepeat);
         thisBooking.parseData(bookings, eventsCurrent, eventsRepeat);
 
       });
@@ -97,7 +97,7 @@ class Booking {
         }
       }
     }
-    console.log('thisBooking.booked', thisBooking.booked);
+    //console.log('thisBooking.booked', thisBooking.booked);
 
     thisBooking.updateDOM();
   }
@@ -281,7 +281,7 @@ class Booking {
       phone: thisBooking.dom.phone.value,
       address: thisBooking.dom.address.value,
     };
-
+    /*
     console.log('date',payload.date,
       'hour',payload.hour,
       'table',payload.table,
@@ -291,7 +291,7 @@ class Booking {
       'phone',payload.phone,
       'address',payload.address
     );
-
+*/
     for(let starters of thisBooking.starters){
       payload.starters.push(starters);
     }

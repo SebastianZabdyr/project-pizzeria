@@ -24,14 +24,14 @@ const app = {
     const idFromHash = window.location.hash.replace('#/', '');
 
     let pageMatchingHash = thisApp.pages[0].id;
-
+/*
     for(let page of thisApp.pages){
       if (page.id == idFromHash){
         pageMatchingHash = page.id;
         break;
       }
     }
-
+*/
     thisApp.activatePage(pageMatchingHash);
 
     for(let link of thisApp.navLinks){
