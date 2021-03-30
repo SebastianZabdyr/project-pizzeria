@@ -121,6 +121,7 @@ const app = {
     const thisApp = this;
 
     const homeContainer = document.querySelector(select.containerOf.home);
+    console.log(homeContainer);
     thisApp.home = new Home(homeContainer);
   },
 
