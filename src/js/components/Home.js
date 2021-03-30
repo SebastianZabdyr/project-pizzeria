@@ -29,7 +29,7 @@ class Home {
       thisHome.dom.pages[0].classList.remove(classNames.pages.active);
       thisHome.dom.navLinks[0].classList.remove(classNames.nav.active);
       thisHome.dom.pages[1].classList.add(classNames.pages.active);
-      thisHome.dom.navLinks[1].classList.add(classNames.nav.active);
+      thisHome.dom.navLinks[1].classList.add(classNames.nav.active); 
     });
 
     thisHome.dom.linkBooking.addEventListener('click', function(event) {
